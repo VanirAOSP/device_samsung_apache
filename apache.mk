@@ -122,10 +122,11 @@ PRODUCT_PACKAGES += \
     libaudioparameter
 
 PRODUCT_PACKAGES += \
-    libmm-omxcore \
-    libOmxCore \
-    libOmxVenc \
-    libOmxVdec \
+	libSEC_OMX_Core \
+	libOMX.SEC.AVC.Decoder \
+	libOMX.SEC.M4V.Decoder \
+	libOMX.SEC.M4V.Encoder \
+	libOMX.SEC.AVC.Encoder \
     libstagefrighthw \
     libc2dcolorconvert
 
