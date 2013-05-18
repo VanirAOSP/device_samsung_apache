@@ -113,10 +113,13 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm7x30 \
     gps.msm7x30 \
     lights.msm7x30 \
+    power.msm7x30 \
     audio.primary.msm7x30 \
     audio_policy.msm7x30 \
-    audio_policy.conf \
-    audio.a2dp.default
+    audio.a2dp.default \
+    audio.usb.default \
+    libaudio-resampler \
+    libaudioparameter
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
@@ -124,12 +127,11 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libOmxVdec \
     libstagefrighthw \
-    libI420colorconvert
+    libc2dcolorconvert
 
 PRODUCT_PACKAGES += \
     badblocks \
     e2fsck \
-    e2label \
     mke2fs \
     mke2fs.conf \
     resize2fs \
@@ -138,9 +140,9 @@ PRODUCT_PACKAGES += \
     setup_fs
 
 PRODUCT_PACKAGES += \
-    hciconfig \
-    hcitool \
-    libaudioutils
+    com.android.future.usb.accessory \
+    libnetcmdiface
+
 
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -162,3 +164,4 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/samsung/apache/device-vendor.mk)
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
