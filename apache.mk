@@ -113,41 +113,18 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm7x30 \
     gps.msm7x30 \
     lights.msm7x30 \
-    power.msm7x30 \
     audio.primary.msm7x30 \
     audio_policy.msm7x30 \
-    audio.a2dp.default \
-    audio.usb.default \
-    libaudio-resampler \
-    libaudioparameter
+    audio_policy.conf \
+    audio.a2dp.default
 
 PRODUCT_PACKAGES += \
+    libmm-omxcore \
+    libOmxCore \
+    libOmxVenc \
+    libOmxVdec \
     libstagefrighthw \
-    libseccscapi \
-    libsecbasecomponent \
-    libsecosal \
-    libSEC_OMX_Resourcemanager \
-    libSEC_OMX_Core \
-    libSEC_OMX_Vdec \
-    libOMX.SEC.AVC.Decoder \
-    libOMX.SEC.M4V.Decoder \
-    libOMX.SEC.WMV.Decoder \
-    libOMX.SEC.VP8.Decoder \
-    libSEC_OMX_Venc \
-    libOMX.SEC.AVC.Encoder \
-    libOMX.SEC.M4V.Encoder \
-    libSEC_OMX_Adec \
-    libOMX.SEC.MP3.Decoder
-
-PRODUCT_PACKAGES += \
-    badblocks \
-    e2fsck \
-    mke2fs \
-    mke2fs.conf \
-    resize2fs \
-    tune2fs \
-    make_ext4fs \
-    setup_fs
+    libI420colorconvert
 
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
