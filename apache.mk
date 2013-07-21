@@ -74,7 +74,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bthid.ko:root/lib/modules/bthid.ko \
     $(LOCAL_PATH)/prebuilt/cifs.ko:root/lib/modules/cifs.ko \
-    $(LOCAL_PATH)/prebuilt/dhd.ko:root/lib/modules/dhd.ko
+    $(LOCAL_PATH)/prebuilt/dhd.ko:root/lib/modules/dhd.ko \
+	$(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:root/lib/modules/scsi_wait_scan.ko
 
 # LPM
 PRODUCT_COPY_FILES += \
@@ -113,10 +114,13 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm7x30 \
     gps.msm7x30 \
     lights.msm7x30 \
+    power.msm7x30 \
     audio.primary.msm7x30 \
     audio_policy.msm7x30 \
-    audio_policy.conf \
-    audio.a2dp.default
+    audio.a2dp.default \
+    audio.usb.default \
+    libaudio-resampler \
+    libaudioparameter
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
@@ -124,18 +128,28 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libOmxVdec \
     libstagefrighthw \
-    libI420colorconvert
+    libc2dcolorconvert
+
+PRODUCT_PACKAGES += \
+    badblocks \
+    e2fsck \
+    mke2fs \
+    mke2fs.conf \
+    resize2fs \
+    tune2fs \
+    make_ext4fs \
+    setup_fs
 
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     libnetcmdiface
-
 
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.allow.mock.location=1 \
     ro.debuggable=1
+	ro.adb.secure=0
 
 #ifeq ($(TARGET_PREBUILT_KERNEL),)
 #    LOCAL_KERNEL := $(LOCAL_PATH)/prebuilt/zImage

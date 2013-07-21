@@ -140,7 +140,7 @@ on boot
     chown system system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
     chown system system /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
 
-on emmc-fs
+on fs
     chmod 0666 /dev/block/mmcblk0p14
 
     mount_all fstab.qcom
@@ -201,7 +201,7 @@ service rmt_storage /system/bin/rmt_storage
     group radio
     disabled
 
-on property:ro.emmc=1
+on property:ro.boot.emmc=true
     start rmt_storage
 
 service get_macaddrs /system/bin/get_macaddrs
