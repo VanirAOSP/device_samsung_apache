@@ -28,6 +28,15 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
+
+    <com.android.internal.policy.impl.keyguard.MultiPaneChallengeLayout
+        android:id="@+id/multi_pane_challenge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
+        <include layout="@layout/keyguard_multi_user_selector"/>
+    </com.android.internal.policy.impl.keyguard.MultiPaneChallengeLayout>
+
     <com.android.internal.policy.impl.keyguard.SlidingChallengeLayout
         android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
