@@ -39,8 +39,7 @@ TARGET_CPU_ABI2 := armeabi
 # Enable NEON feature
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_ARCH_VARIANT_CPU := cortex-a8
-TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
+TARGET_CPU_VARIANT := scorpion
 
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT
@@ -97,6 +96,9 @@ BOARD_HAVE_SAMSUNG_AUDIO := true
 BOARD_USES_QCOM_AUDIO_RESETALL := true
 BOARD_USES_QCOM_AUDIO_VOIPMUTE := true
 
+# QCOM enhanced A/V
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
 BOARD_EGL_CFG := device/samsung/apache/config/egl.cfg
 
 USE_OPENGL_RENDERER := true
@@ -117,7 +119,7 @@ BOARD_NEEDS_MEMORYHEAPPMEM := true
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_GPS := true
 
-# BOARD_USE_LEGACY_TOUCHSCREEN := true
+BOARD_USE_LEGACY_TOUCHSCREEN := true
 
 # Camera stuff
 BOARD_USES_LEGACY_OVERLAY := true
@@ -152,9 +154,8 @@ BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_SDCARD_INTERNAL := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/apache/recovery/recovery_keys.c
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/apache/recovery/graphics.c
 TARGET_RECOVERY_INITRC := device/samsung/apache/config/init.recovery.rc
-TARGET_RECOVERY_FSTAB := device/samsung/apache/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/apache/config/fstab.qcom
 # Enable below line if compiling for a recovery version before 6.0.1.2
 #BOARD_UMS_LUNFILE := /sys/devices/platform/usb_mass_storage/lun%d/file
 # End recovery stuff
