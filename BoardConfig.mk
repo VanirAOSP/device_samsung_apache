@@ -38,6 +38,7 @@ TARGET_CPU_ABI2 := armeabi
 
 # Enable NEON feature
 TARGET_ARCH := arm
+TARGET_ARCH_VARIANT_CPU := cortex-a8
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := scorpion
 
