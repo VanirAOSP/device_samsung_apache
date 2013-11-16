@@ -98,7 +98,7 @@ BOARD_USES_QCOM_AUDIO_RESETALL := true
 BOARD_USES_QCOM_AUDIO_VOIPMUTE := true
 
 # QCOM enhanced A/V
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
 
 BOARD_EGL_CFG := device/samsung/apache/config/egl.cfg
 
