@@ -70,7 +70,8 @@
 #define MSMFB_MDP_PP _IOWR(MSMFB_IOCTL_MAGIC, 156, struct msmfb_mdp_pp)
 #define MSMFB_OVERLAY_VSYNC_CTRL _IOW(MSMFB_IOCTL_MAGIC, 160, unsigned int)
 #define MSMFB_VSYNC_CTRL  _IOW(MSMFB_IOCTL_MAGIC, 161, unsigned int)
-#define MSMFB_OVERLAY_COMMIT      _IOW(MSMFB_IOCTL_MAGIC, 163, unsigned int)
+#define MSMFB_DISPLAY_COMMIT      _IOW(MSMFB_IOCTL_MAGIC, 163, \
+						struct mdp_display_commit)
 
 #define FB_TYPE_3D_PANEL 0x10101010
 #define MDP_IMGTYPE2_START 0x10000
@@ -189,7 +190,7 @@ struct mdp_img {
 };
 
 /*
- * {3x3} + {3} ccs matrix
+ * {3x3}{3} ccs matrix
  */
 
 #define MDP_CCS_RGB2YUV 	0
@@ -477,6 +478,41 @@ struct mdp_mixer_info {
 	int mixer_num;
 	int z_order;
 };
+
+/*struct msmfb_metadata {
+        uint32_t op;
+        uint32_t flags;
+        union {
+                struct mdp_blend_cfg blend_cfg;
+                uint32_t panel_frame_rate;
+        } data;
+};*/
+
+#define MDP_MAX_FENCE_FD  10
+
+struct mdp_buf_sync {
+  uint32_t flags;
+  uint32_t acq_fen_fd_cnt;
+  int *acq_fen_fd;
+  int *rel_fen_fd;
+};
+
+struct mdp_buf_fence {
+  uint32_t flags;
+  uint32_t acq_fen_fd_cnt;
+  int acq_fen_fd[MDP_MAX_FENCE_FD];
+  int rel_fen_fd[MDP_MAX_FENCE_FD];
+};
+
+#define MDP_DISPLAY_COMMIT_OVERLAY 0x00000001
+
+struct mdp_display_commit {
+ uint32_t flags;
+ uint32_t wait_for_finish;
+ struct fb_var_screeninfo var;
+ struct mdp_buf_fence buf_fence;
+};
+
 
 #define MAX_PIPE_PER_MIXER  5
 
