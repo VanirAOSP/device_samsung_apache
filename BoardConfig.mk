@@ -57,6 +57,8 @@ TARGET_NO_INITLOGO := true
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
+USE_SET_METADATA := false
+
 # Wifi related defines
 WIFI_BAND                        := 802_11_ABG
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
