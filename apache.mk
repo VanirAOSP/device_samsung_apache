@@ -75,7 +75,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bthid.ko:root/lib/modules/bthid.ko \
     $(LOCAL_PATH)/prebuilt/cifs.ko:root/lib/modules/cifs.ko \
     $(LOCAL_PATH)/prebuilt/dhd.ko:root/lib/modules/dhd.ko \
-	$(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:root/lib/modules/scsi_wait_scan.ko
+    $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:root/lib/modules/scsi_wait_scan.ko
 
 # LPM
 PRODUCT_COPY_FILES += \
@@ -149,7 +149,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.allow.mock.location=1 \
     ro.debuggable=1
-	ro.adb.secure=0
+    ro.adb.secure=0
 
 #ifeq ($(TARGET_PREBUILT_KERNEL),)
 #    LOCAL_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
