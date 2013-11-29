@@ -77,6 +77,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/dhd.ko:root/lib/modules/dhd.ko \
     $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:root/lib/modules/scsi_wait_scan.ko
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
 # LPM
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lpm/bin/charging_mode:system/bin/charging_mode \
