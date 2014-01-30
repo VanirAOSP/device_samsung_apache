@@ -70,6 +70,7 @@
 #define MSMFB_MDP_PP _IOWR(MSMFB_IOCTL_MAGIC, 156, struct msmfb_mdp_pp)
 #define MSMFB_OVERLAY_VSYNC_CTRL _IOW(MSMFB_IOCTL_MAGIC, 160, unsigned int)
 #define MSMFB_VSYNC_CTRL  _IOW(MSMFB_IOCTL_MAGIC, 161, unsigned int)
+
 // new fence sync
 #define MSMFB_BUFFER_SYNC  _IOW(MSMFB_IOCTL_MAGIC, 162, struct mdp_buf_sync)
 #define MSMFB_DISPLAY_COMMIT      _IOW(MSMFB_IOCTL_MAGIC, 164, \
@@ -192,7 +193,7 @@ struct mdp_img {
 };
 
 /*
- * {3x3} + {3} ccs matrix
+ * {3x3}+{3} ccs matrix
  */
 
 #define MDP_CCS_RGB2YUV 	0
@@ -548,7 +549,7 @@ enum {
 	ROTATOR_SUBSYSTEM_ID,
 };
 
-#ifdef __KERNEL__
+//#ifdef __KERNEL__
 
 /* get the framebuffer physical address information */
 int get_fb_phys_info(unsigned long *start, unsigned long *len, int fb_num,
@@ -562,6 +563,6 @@ int msm_fb_writeback_dequeue_buffer(struct fb_info *info,
 		struct msmfb_data *data);
 int msm_fb_writeback_stop(struct fb_info *info);
 int msm_fb_writeback_terminate(struct fb_info *info);
-#endif
+//#endif
 
 #endif /*_MSM_MDP_H_*/

@@ -125,7 +125,7 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libaudioparameter
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libmm-omxcore \
     libOmxCore \
     libOmxVenc \
